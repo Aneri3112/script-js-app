@@ -1,19 +1,5 @@
-let pokemonlist = [{
-
-        name: 'Bulbasaur',
-        height: '0.7',
-        type: ['grass', 'poision']
-    },
-
-    {
-        name: 'caterpie',
-        height: '0.3',
-        type: 'bug'
-    },
-
-    {
-        name: 'jihhlypuff',
-        height: '0.5',
-        type: ['fairy', 'normal']
-    }
+let pokemonlist = [
+    {name: 'Bulbasaur', height: '0.7', types: ['grass', 'poision']},
+    {name: 'caterpie', height: '0.3', types: 'bug'},
+    {name: 'jihhlypuff',height: '0.5',types: ['fairy', 'normal']}
 ];
