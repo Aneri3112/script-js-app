@@ -6,9 +6,9 @@ let pokemonlist = [
 
 //creating for-loop for pokemonlist    
 for(let i=0; i < pokemonlist.length; i++) {
-    if (pokemonlist[i].height > 0.5){
-        document.write( `${pokemonlist[i].name + " "} (height: ${ pokemonlist[i].height}) - Wow, that's big!` + " ");
-    }else {
-       document.write( `${pokemonlist[i].name + " " } (height: ${ pokemonlist[i].height}) ` + " "); 
-    }
+    if(pokemonlist[i].height > 0.5) {
+      document.write("<p>" + pokemonlist[i].name + " " + '(height: ' + pokemonlist[i].height +')' + " - Wow, that's big!" + "</p>");
+    } else {
+      document.write("<p>" + pokemonlist[i].name + " " + '(height: ' + pokemonlist[i].height +') ' + "</p>");
+    }  
 }
