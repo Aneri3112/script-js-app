@@ -1,14 +1,28 @@
-let pokemonlist = [
- { name: 'Bulbasaur', height: '0.7', types: ['grass', 'poision']},
- { name: 'caterpie', height: '0.3', types: ['bug']},
- { name: 'jihhlypuff', height:'0.5', types: ['fairy', 'normal']}
-];
+let pokemonRepository = (function() {
+  let pokemonlist = [
+    { name: 'Bulbasaur', height: '0.7', types: ['grass', 'poision']},
+    { name: 'caterpie', height: '0.3', types: ['bug']},
+    { name: 'jihhlypuff', height:'0.5', types: ['fairy', 'normal']}
+  ];
+  function add(pokemon){
+    pokemonlist.push(pokemon);
+  }
+   function getAll() {
+     return pokemonlist;
+   }
 
-//creating for-loop for pokemonlist    
-for(let i=0; i < pokemonlist.length; i++) {
-    if(pokemonlist[i].height > 0.5) {
-      document.write("<p>" + pokemonlist[i].name + " " + '(height: ' + pokemonlist[i].height +')' + " - Wow, that's big!" + "</p>");
-    } else {
-      document.write("<p>" + pokemonlist[i].name + " " + '(height: ' + pokemonlist[i].height +') ' + "</p>");
-    }  
-}
+   return{
+     add: add,
+     getAll: getAll
+   }
+})();
+
+//Updated for loop to foorEach loop
+pokemonRepository.getAll().forEach(function(pokemon) {
+  document.write("<p>" +  pokemon.name + ", " +  "height: " + pokemon.height + "</p>")
+});
+
+//add object
+console.log(pokemonRepository.getAll());
+pokemonRepository.add({name: 'Seel', height: 1.1, types: ['water']})
+console.log(pokemonRepository.getAll());
