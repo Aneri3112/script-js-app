@@ -4,17 +4,19 @@ let pokemonRepository = (function() {
     { name: 'caterpie', height: '0.3', types: ['bug']},
     { name: 'jihhlypuff', height:'0.5', types: ['fairy', 'normal']}
   ];
+  //Public functions
   function add(pokemon){
     pokemonlist.push(pokemon);
   }
-   function getAll() {
-     return pokemonlist;
-   }
+  
+  function getAll() {
+    return pokemonlist;
+  }
 
-   return{
-     add: add,
-     getAll: getAll
-   }
+  return{
+    add: add,
+    getAll: getAll
+  }
 })();
 
 //Updated for loop to foorEach loop
