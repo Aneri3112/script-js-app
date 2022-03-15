@@ -5,7 +5,7 @@ let pokemonRepository = (function() {
     { name: 'jihhlypuff', height:'0.5', types: ['fairy', 'normal']}
   ];
   //Public functions
-  function add(pokemon){
+  function add(pokemon) {
     pokemonlist.push(pokemon);
   }
   
@@ -13,7 +13,7 @@ let pokemonRepository = (function() {
     return pokemonlist;
   }
 
-  return{
+  return {
     add: add,
     getAll: getAll
   }
