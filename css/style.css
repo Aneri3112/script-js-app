@@ -29,4 +29,5 @@ ul {
 }
 .button-class:hover {
   background-color: transparent;
+  color: black;
 }
