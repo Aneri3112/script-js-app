@@ -4,19 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>Simple Project</title>
 </head>
 <body>
-    <header></header>
+    <!--Header of the page-->
+    <header>
+        <div class="topnav">
+            <img class="pokemon_logo" src="./img/pokemon-logo.png" alt="pokemon logo">
+            <div class="search-container">
+                <div class="search-container">
+                    <form action="/action_page.php">
+                        <label for="my-input"></label>
+                        <input id="my-input" type="text" placeholder="Search.." name="search">
+                        <i class="fa fa-search"></i>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header> 
+    <!--Main section of the page-->
     <main>
         <h1>Select your Pokemon</h1>
         <div class="section">
             <ul class="pokemon-list"></ul>
         </div>
     </main>
-    <footer></footer>
-    
+    <!--Footer of the page-->
+    <footer class="page-footer">
+        <div class="social-icons">
+            <a href=" ./img/twitter.svg" target="_blank"><img height= "30" width="30" src="./img/twitter.svg" alt="Twitter"></a> 
+            <a href=" ./img/linkedin.svg" target="_blank"> <img height= "30" width="30" src="./img/linkedin.svg" alt="Linkedin"></a>
+            <a href=" ./img/github.svg" target="_blank"> <img height= "30" width="30" src="./img/github.svg" alt="Github"></a>
+        </div>    
+    </footer>
+    <!--Script files-->
+    <script src="js/promise-polyfill.js"></script>
+    <script src="js/fetch-polyfill.js"></script>
     <script src="js/scripts.js"> </script>
     <script src="js/tota11y.min.js"> </script>
 </body>
