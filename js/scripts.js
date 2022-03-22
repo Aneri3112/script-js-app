@@ -1,4 +1,4 @@
-let pokemonRepository = (function() {
+let pokemonRepository = (function () {
   let pokemonList = [];
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
@@ -30,7 +30,7 @@ let pokemonRepository = (function() {
     pokemonList.appendChild(listpokemon);
     addListener(button, pokemon);
   }
-
+  
   function loadList() {
     return fetch(apiUrl).then(function (response) {
       return response.json();
