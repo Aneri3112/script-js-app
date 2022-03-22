@@ -1,17 +1,81 @@
 body {
   background-image: linear-gradient(to right, #fe8f8f, #a0d1ff);
 }
+
+.topnav {
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.pokemon_logo {
+  width: 160px;
+  height: 50px;
+}
+
+.topnav img {
+  float: left;
+  display: block;
+  color: black;
+  padding: 14px 16px;
+}
+
+.topnav .search-container {
+  float: right;
+  margin-top: 10px;
+}
+
+.topnav input[type="text"] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.topnav .search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: transparent;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .search-container button:hover {
+  background: transparent;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav .search-container {
+    float: none;
+  }
+  .topnav a,
+  .topnav input[type="text"],
+  .topnav .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type="text"] {
+    border: 1px solid #ccc;
+  }
+}
+.section {
+  margin-bottom: 30px;
+}
 h1 {
   text-align: center;
   margin-top: 40px;
-  margin-left: 60px;
 }
 ul {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  margin-top: 70px;
-  align-self: center;
+  display: inline-block;
+  margin-top: 50px;
+  margin-right: 30px;
+  text-align: center;
 }
 .button-class {
   padding: 16px 32px;
@@ -27,7 +91,25 @@ ul {
   border: 5px solid white;
   border-radius: 20px 40px;
 }
+
 .button-class:hover {
   background-color: transparent;
-  color: black;
+}
+
+.page-footer {
+  text-align: center;
+  background-color: transparent;
+  clear: both;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0px;
 }
