@@ -9,9 +9,17 @@ let pokemonRepository = (function () {
   function getAll() {
     return pokemonList;
   }
-  // Shows pokemon name when clicked
-  function showDetails (pokemon) {
-    console.log(pokemon.name, pokemon.height, pokemon.types, pokemon.weight)
+  //Filter the pokemon for Search 
+  function filterPokemon(event) { 
+    keyword = event.target.value.toLowerCase();
+    let pokemonElements = document.querySelectorAll('.pokemon-list > *')
+    pokemonList.forEach((p, index) => {
+      if (p.name.indexOf(keyword) < 0) {
+        pokemonElements[index].classList.add('hide')
+      } else {
+        pokemonElements[index].classList.remove('hide')
+      }
+    });
   }
   
   function addListener (button, pokemon) {
@@ -22,7 +30,7 @@ let pokemonRepository = (function () {
   //Adding pokemon to ul as button 
   function addListItem(pokemon) {
     let pokemonList = document.querySelector(".pokemon-list");
-    let listpokemon = document.createElement("ul");
+    let listpokemon = document.createElement("li");
     let button = document.createElement("button");
     button.innerText = pokemon.name;
     button.classList.add("button-class");
@@ -41,7 +49,6 @@ let pokemonRepository = (function () {
           detailsUrl: item.url
         };
         add(pokemon);
-        console.log(pokemon);
       });
     }).catch(function (e) {
         console.error(e);
@@ -75,9 +82,13 @@ let pokemonRepository = (function () {
     addListItem: addListItem,
     loadList: loadList,
     loadDetails: loadDetails,
-    showDetails: showDetails
+    showDetails: showDetails,
+    filterPokemon: filterPokemon
   };
 })();
+
+let input = document.getElementById('my-input')
+input.addEventListener('keyup', pokemonRepository.filterPokemon);
 
 //forEach loop
 pokemonRepository.loadList().then(function () {
