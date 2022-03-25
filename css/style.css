@@ -69,7 +69,7 @@ body {
     margin-left: 22%;
   }
   .topnav input[type="search"] {
-    border: 2px solid black;
+    border: 1px solid #ccc;
   }
 }
 .section {
@@ -100,18 +100,82 @@ li {
   border: 5px solid white;
   border-radius: 20px 40px;
 }
+
 .button-class:hover {
   background-color: transparent;
+}
+
+#modal-container.is-visible {
+  display: grid;
+  text-align: center;
+  position: fixed;
+  padding: 20px;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  font-size: 20px;
+  z-index: 999;
+  overflow: auto;
+}
+
+.modal {
+  margin: auto;
+  display: inline-block;
+  box-sizing: border-box;
+  background-image: linear-gradient(to right, #fe8f8f, #a0d1ff);
+  padding: 15px;
+  width: 25%;
+  max-width: 600px;
+  border: 3px solid black;
+  border-radius: 6%;
+}
+
+.modal-close {
+  float: right;
+  -webkit-appearance: none;
+  border: 0;
+  background: none;
+  color: black;
+  text-decoration: none;
+}
+
+.modal h2 {
+  margin-top: 5px;
+  color: black;
+  text-align: center;
+  margin-left: 25px;
+  font-size: 30px;
+}
+
+.modal p {
+  margin-bottom: 0;
+  color: black;
+}
+
+.modal-img {
+  width: 400px;
+  height: auto;
+}
+
+#modal-container {
+  display: none;
 }
 
 .page-footer {
   text-align: center;
   clear: both;
+  position: fixed;
+  bottom: 0;
   left: 0;
   width: 100%;
   margin-top: 20px;
   overflow: hidden;
+  background-image: linear-gradient(to right, #fe8f8f, #a0d1ff);
 }
+
 .social-icons {
   display: flex;
   justify-content: center;
@@ -120,18 +184,55 @@ li {
 }
 
 @media screen and (max-width: 480px) {
-  li {
+  #pokemon-list {
     display: inline-block;
     text-align: center;
-    margin-left: 50px;
-    margin-right: 60px;
+    margin-right: 40px;
+  }
+  #modal-container.is-visible {
+    font-size: small;
+  }
+  .modal {
+    padding: 5px;
+    width: 100%;
+    max-width: 400px;
+    border: 3px solid black;
+    border-radius: 6%;
+  }
+  .modal-img {
+    width: 100px;
+    height: auto;
+  }
+  h2 {
+    font-size: 23px;
+  }
+  p {
+    font-size: 18px;
   }
 }
+
 @media screen and (max-width: 850px) {
   li {
-    display: inline-block;
-    text-align: center;
-    margin-left: 70px;
-    margin-right: 60px;
+    display: inline-flexbox;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    margin: 15px;
+  }
+  .modal {
+    padding: 10px;
+    width: 100%;
+    max-width: 400px;
+    border: 3px solid black;
+    border-radius: 6%;
+  }
+  .modal-img {
+    width: 200px;
+    height: auto;
+  }
+  h2 {
+    font-size: 28px;
+  }
+  p {
+    font-size: 22px;
   }
 }
