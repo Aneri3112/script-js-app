@@ -10,10 +10,19 @@ body {
 .hide {
   display: none;
 }
-#myinput {
+#search-pokemon {
   border: 2px solid #ffb300;
   background: transparent;
   color: white;
+}
+.navbar-dark .navbar-toggler {
+  color: #c58900;
+  border-color: #ffb300;
+}
+.navbar-nav {
+  font-size: 28px;
+  color: rgb(197, 137, 0);
+  text-align: center;
 }
 .container {
   margin-bottom: 50px;
