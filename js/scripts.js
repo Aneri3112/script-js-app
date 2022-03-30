@@ -61,11 +61,9 @@ let pokemonRepository = (function() {
         };
         add(pokemon)
         hideLoadingMessage();
-        console.log(pokemon);
       });
     }).catch(function (e) {
       hideLoadingMessage();
-      console.error(e);
     })
   }
 
@@ -87,7 +85,6 @@ let pokemonRepository = (function() {
       hideLoadingMessage();
     }).catch(function (e) {
       hideLoadingMessage();
-      console.error(e);
     });
   }
 
