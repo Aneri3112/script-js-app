@@ -1,8 +1,6 @@
 let pokemonRepository = (function() {
   let pokemonList = [];
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=52';
-  let modalContainer = document.querySelector('#modal-container');
-
 
   //Public functions
   function add(pokemon) {
@@ -12,16 +10,18 @@ let pokemonRepository = (function() {
     return pokemonList;
   }
   // Search function
-  function filterPokemon(event) { 
-    keyword = event.target.value.toLowerCase();
-    let pokemonElements = document.querySelectorAll('.list-group > *')
-    pokemonList.forEach((p, index) => {
-      if (p.name.indexOf(keyword) < 0) {
-        pokemonElements[index].classList.add('hide')
-      } else {
-        pokemonElements[index].classList.remove('hide')
-      }
-    });
+  function findPokemon(searchName) {
+    $(".list-group").empty(); // Clear all the buttons
+
+   pokemonList.forEach((pokemon) => {
+     if (properCasing(pokemon.name).indexOf(properCasing(searchName)) > -1) {
+       addListItem(pokemon);
+     }
+   });
+ }
+ //Makeing string start with uppercase letter
+  function properCasing(item) {
+   return item.charAt(0).toUpperCase() + item.slice(1);
   }
 
   //Adding pokemon to ul as button 
@@ -32,6 +32,8 @@ let pokemonRepository = (function() {
     button.innerText = pokemon.name;
     button.classList.add('btn-primary');
     listpokemon.classList.add('group-list-item');
+    button.setAttribute("data-toggle", "modal");
+    button.setAttribute("data-target", "#Pokemon");
     listpokemon.appendChild(button);
     pokemonList.appendChild(listpokemon);
     button.addEventListener('click', function() {
@@ -136,11 +138,9 @@ let pokemonRepository = (function() {
     loadList: loadList,
     loadDetails: loadDetails,
     showDetails: showDetails,
-    filterPokemon: filterPokemon,
+    findPokemon:findPokemon
   };
 })();
-let input = document.getElementById('myinput')
-input.addEventListener('keyup', pokemonRepository.filterPokemon);
 
 //forEach loop
 pokemonRepository.loadList().then(function () {
