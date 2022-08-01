@@ -20,3 +20,9 @@ The app shows the list of 52 Pokemons and there details on click like Image, Hei
 - Bootstrap is used to create clean and usable design.
 - The app is working in Chrome, Safari, Firefox, Edge.
 - The app is Responsive.
+
+# App / Livepage:
+
+[Link to Livepage](https://aneri3112.github.io/script-js-app/)
+
+![Livepage](./img/Pokemon.png)
